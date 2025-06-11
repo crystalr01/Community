@@ -258,7 +258,7 @@ function CommunityDetails() {
             </motion.header>
 
             {/* Mobile Sidebar Toggle Button */}
-            {isMobile && (
+            {/* {isMobile && (
                 <motion.button
                     className="mobile-sidebar-toggle"
                     onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
@@ -274,7 +274,7 @@ function CommunityDetails() {
                     )}
                     <span>{isMobileSidebarOpen ? 'Close' : 'Info'}</span>
                 </motion.button>
-            )}
+            )} */}
 
             {/* Main Content Area */}
             <div className="content-grid">

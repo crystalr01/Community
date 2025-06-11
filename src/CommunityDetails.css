@@ -252,7 +252,7 @@ body::before {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    animation: fadeInUp 0.8s ease-out 0.2s both;
+    animation: fadeInUp 0.7s ease-out 0.2s both;
 }
 
 @media (min-width: 1024px) {
@@ -598,34 +598,5 @@ body::before {
 
     .download-banner {
         padding: 1rem;
-    }
-}
-
-/* Responsive adjustments for sidebar */
-@media (max-width: 767px) {
-    .meta-sidebar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 85%;
-        max-width: 320px;
-        height: 100vh;
-        z-index: 90;
-        overflow-y: auto;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 768px) {
-    .mobile-sidebar-toggle {
-        display: none;
-    }
-
-    .meta-sidebar {
-        display: block !important;
     }
 }

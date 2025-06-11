@@ -22,10 +22,16 @@ function Dashboard() {
 
     // Detect mobile on resize
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        const handleResize = () => {
+            const mobile = window.innerWidth <= 768;
+            setIsMobile(mobile);
+            setIsSidebarOpen(!mobile); // <-- Sync sidebar open/close on resize
+        };
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);

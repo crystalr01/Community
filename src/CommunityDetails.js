@@ -75,6 +75,16 @@ const categoryThemes = {
     },
 };
 
+const categoryIcons = {
+    News: '📰',
+    Speech: '🎤',
+    Poem: '📜',
+    'Day Special': '🎉',
+    Stories: '📚',
+    Essay: '✍️',
+    'Good Thoughts': '💭',
+};
+
 // Helper function to get theme colors
 const getTheme = (category, themes) => themes[category] || themes['News'];
 

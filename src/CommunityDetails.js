@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ref, onValue, off } from 'firebase/database';
 import { database } from './firebase';
-import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import { ArrowDownTrayIcon, XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 
 // Import the dedicated CSS file
@@ -94,6 +94,21 @@ function CommunityDetails() {
     const [thread, setThread] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+            // Close sidebar when resizing to desktop
+            if (window.innerWidth >= 768) {
+                setIsMobileSidebarOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // This useEffect handles fetching data from Firebase
     useEffect(() => {
@@ -241,6 +256,25 @@ function CommunityDetails() {
                     <div className="button-shine" />
                 </motion.a>
             </motion.header>
+
+            {/* Mobile Sidebar Toggle Button */}
+            {isMobile && (
+                <motion.button
+                    className="mobile-sidebar-toggle"
+                    onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    {isMobileSidebarOpen ? (
+                        <XMarkIcon className="toggle-icon" />
+                    ) : (
+                        <Bars3Icon className="toggle-icon" />
+                    )}
+                    <span>{isMobileSidebarOpen ? 'Close' : 'Info'}</span>
+                </motion.button>
+            )}
 
             {/* Main Content Area */}
             <div className="content-grid">

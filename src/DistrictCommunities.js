@@ -165,13 +165,13 @@ function DistrictCommunities() {
                                     onClick={() => handleThreadClick(thread.id)}
                                 >
                                     <div className="card-header">
-                                        {thread.imageUrl && (
+                                        {/* {thread.imageUrl && (
                                             <img
                                                 src={thread.imageUrl}
                                                 alt={thread.title}
                                                 className="thread-image"
                                             />
-                                        )}
+                                        )} */}
                                         <div className="category-badge">{thread.category}</div>
                                     </div>
                                     <div className="card-body">
@@ -193,14 +193,14 @@ function DistrictCommunities() {
                                                 <span>{new Date(thread.timestamp).toLocaleDateString()}</span>
                                             </div>
                                         </div>
-                                        <div className="stats-info">
-                                            <div className="stat-item">
+                                        <div className="meta-info">
+                                            <div className="user-info">
                                                 <svg viewBox="0 0 24 24">
                                                     <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z" />
                                                 </svg>
                                                 <span>{thread.likeCount || 0}</span>
                                             </div>
-                                            <div className="stat-item">
+                                            <div className="user-info">
                                                 <svg viewBox="0 0 24 24">
                                                     <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
                                                 </svg>

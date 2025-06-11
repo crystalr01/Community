@@ -7,6 +7,7 @@
     font-family: 'Inter', sans-serif;
     padding: 0;
     margin: 0;
+    min-width: 100%;
 }
 
 .hero-section {
@@ -417,6 +418,12 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .homepage-container {
+        min-height: 100vh;
+        min-width: 100%;
+    }
+
     .homepage-title {
         font-size: 2.5rem;
     }
@@ -437,7 +444,7 @@
 
     .thread-card-grid {
         grid-template-columns: 1fr;
-        padding: 20px 16px;
+        padding: 10px 10px;
         gap: 20px;
     }
 
@@ -458,6 +465,11 @@
 }
 
 @media (max-width: 480px) {
+    .homepage-container {
+        min-height: 100vh;
+        min-width: 100%;
+    }
+
     .hero-section {
         padding: 40px 16px 30px;
     }

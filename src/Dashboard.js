@@ -11,13 +11,13 @@ import {
 import './Dashboard.css';
 
 const menuItems = [
-    { name: 'Home', path: '/', icon: <HomeIcon className="icon" /> },
-    { name: 'Communities', path: '/districts', icon: <MapIcon className="icon" /> },
-    { name: 'E-Guruji App', path: '/app', icon: <DevicePhoneMobileIcon className="icon" /> },
+    { name: 'Home', path: '/', icon: <HomeIcon className="icon text-white" /> },
+    { name: 'Communities', path: '/districts', icon: <MapIcon className="icon text-white" /> },
+    { name: 'E-Guruji App', path: '/app', icon: <DevicePhoneMobileIcon className="icon text-white" /> },
 ];
 
 function Dashboard() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     // Detect mobile on resize
@@ -67,11 +67,11 @@ function Dashboard() {
 
             {/* Main content */}
             <main className="main-content">
-                {(!isSidebarOpen || isMobile) && (
+                {/* {(!isSidebarOpen || isMobile) && (
                     <div className="mobile-toggle-button" onClick={toggleSidebar}>
                         <Bars3Icon className="toggle-icon" />
                     </div>
-                )}
+                )} */}
                 <Outlet />
             </main>
         </div>

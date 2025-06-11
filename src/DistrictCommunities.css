@@ -143,9 +143,11 @@
 
 .card-header {
     position: relative;
-    height: 180px;
     overflow: hidden;
+    height: auto;
+    /* Let height adjust based on content */
 }
+
 
 .thread-image {
     width: 100%;
@@ -196,13 +198,22 @@
     padding: 1rem 1.5rem;
     border-top: 1px solid #e2e8f0;
     display: flex;
+    flex-wrap: wrap;
+    /* allow wrapping on small widths */
+    gap: 0.5rem 1rem;
+    /* spacing between wrapped items */
     justify-content: space-between;
     align-items: center;
 }
 
-.meta-info {
+.meta-info,
+.stats-info {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    /* allow inner items to wrap */
+    align-items: center;
+    min-width: 0;
 }
 
 .user-info,
@@ -214,26 +225,21 @@
     color: #64748b;
 }
 
-.user-info svg,
-.date-info svg {
-    width: 16px;
-    height: 16px;
-    fill: #64748b;
-}
-
-.stats-info {
-    display: flex;
-    gap: 1rem;
-}
-
+.user-info,
+.date-info,
 .stat-item {
     display: flex;
     align-items: center;
     gap: 0.25rem;
     font-size: 0.8rem;
     color: #64748b;
+    flex-shrink: 0;
+    /* prevent shrinking into overflow */
 }
 
+
+.user-info svg,
+.date-info svg,
 .stat-item svg {
     width: 16px;
     height: 16px;
@@ -329,5 +335,19 @@
 
     .main-heading {
         font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meta-info,
+    .stats-info {
+        width: 100%;
+        justify-content: space-between;
     }
 }

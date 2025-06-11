@@ -82,6 +82,11 @@
     color: white;
 }
 
+.icon {
+
+    color: white;
+}
+
 /* Sidebar Navigation */
 .sidebar-nav {
     margin-top: 1.5rem;
@@ -106,6 +111,7 @@
 .sidebar-link .icon {
     width: 24px;
     height: 24px;
+    color: white;
     margin-right: 16px;
     transition: all 0.3s ease;
 }
@@ -156,7 +162,10 @@
     margin: 0;
     width: 100%;
     max-width: 100%;
-    padding: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 20px;
     box-sizing: border-box;
     overflow-x: hidden;
     /* Key to avoid scroll */
@@ -195,8 +204,8 @@
 
     .main-content {
         margin-left: 80px;
-        width: calc(100% - 80px);
-        padding: 50px 20px 20px;
+        width: 100%;
+        padding: 0px;
         align-items: center;
     }
 
@@ -217,8 +226,8 @@
 
     .main-content {
         margin-left: 80px;
-        width: calc(100% - 80px);
-        padding: 40px 15px 15px;
+        width: 100%;
+        padding: 0px;
         align-items: center;
     }
 

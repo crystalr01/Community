@@ -19,7 +19,7 @@ const AppDetails = ({ appData }) => {
         icon: 'https://images.sftcdn.net/images/t_app-icon-s/p/3d153e51-b749-49ef-91df-4be32bdc4efc/2219933606/expert-guruji-logo',
         rating: 4.7,
         ratingsCount: '12.4K',
-        downloads: '50K+',
+        downloads: '100K+',
         size: '47 MB',
         age: '4+',
         updated: 'June 10, 2025',
@@ -119,7 +119,7 @@ const AppDetails = ({ appData }) => {
                         <p className="app-developer">{app.developer}</p>
 
                         <div className="app-meta">
-                            <div className="rating-container">
+                            <div className="meta-block rating-container">
                                 <div className="stars">
                                     {[...Array(5)].map((_, i) => (
                                         <StarIcon
@@ -131,16 +131,12 @@ const AppDetails = ({ appData }) => {
                                 <span className="rating-text">{app.rating} ({app.ratingsCount})</span>
                             </div>
 
-                            <div className="meta-item">
-                                <span className="meta-value">{formatDownloadNumber(app.downloads)}</span>
+                            <div className="meta-block meta-item">
+                                <span className="meta-value">100k+</span>
                                 <span className="meta-label">Downloads</span>
                             </div>
-
-                            <div className="meta-item">
-                                <span className="meta-value">{app.age}</span>
-                                <span className="meta-label">Age</span>
-                            </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -181,13 +177,17 @@ const AppDetails = ({ appData }) => {
                         </div>
                     </div>
 
-                    <div className="active-screenshot-container">
-                        <img
-                            src={app.screenshots[activeScreenshot]}
-                            alt={`App screenshot ${activeScreenshot + 1}`}
-                            className="active-screenshot"
-                        />
+                    <div className="mobile-screenshot-slider">
+                        {app.screenshots.map((screenshot, index) => (
+                            <img
+                                key={index}
+                                src={screenshot}
+                                alt={`Screenshot ${index + 1}`}
+                                className="mobile-slider-image"
+                            />
+                        ))}
                     </div>
+
                 </section>
 
                 {/* App description */}
@@ -274,7 +274,7 @@ const AppDetails = ({ appData }) => {
                         window.open(`https://play.google.com/store/apps/details?id=${app.id}`, '_blank')
                     }
                 >
-                    <ArrowLeftIcon className="icon" />
+
                     <span>Install</span>
                 </button>
 

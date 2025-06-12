@@ -25,13 +25,16 @@ function Dashboard() {
         const handleResize = () => {
             const mobile = window.innerWidth <= 768;
             setIsMobile(mobile);
-            setIsSidebarOpen(!mobile); // <-- Sync sidebar open/close on resize
+            if (mobile) {
+                setIsSidebarOpen(false); // Always hide sidebar on mobile initially
+            } else {
+                setIsSidebarOpen(true); // Show sidebar on desktop
+            }
         };
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -73,13 +76,15 @@ function Dashboard() {
 
             {/* Main content */}
             <main className="main-content">
-                {/* {(!isSidebarOpen || isMobile) && (
+                {/* Mobile Toggle Button */}
+                {isMobile && (
                     <div className="mobile-toggle-button" onClick={toggleSidebar}>
                         <Bars3Icon className="toggle-icon" />
                     </div>
-                )} */}
+                )}
                 <Outlet />
             </main>
+
         </div>
     );
 }

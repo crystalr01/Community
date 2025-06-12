@@ -124,8 +124,8 @@
 }
 
 .app-icon {
-    width: 96px;
-    height: 96px;
+    width: 12-px;
+    height: 120px;
     border-radius: 16px;
     object-fit: cover;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -415,17 +415,23 @@
     background-color: #016b4d;
 }
 
+/* Mobile-only screenshot slider */
+.mobile-screenshot-slider {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .app-hero {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding-top: 80px;
     }
 
     .app-icon {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     .app-name {
@@ -484,6 +490,28 @@
     .header-actions {
         flex-shrink: 0;
     }
+
+    .mobile-screenshot-slider {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 12px;
+        padding: 12px 0;
+        scroll-snap-type: x mandatory;
+    }
+
+    .mobile-slider-image {
+        flex: 0 0 auto;
+        width: 85%;
+        height: auto;
+        border-radius: 12px;
+        scroll-snap-align: start;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .active-screenshot-container {
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -492,8 +520,8 @@
     }
 
     .app-icon {
-        width: 64px;
-        height: 64px;
+        width: 100px;
+        height: 100px;
     }
 
     .app-name {
@@ -512,5 +540,27 @@
     .mobile-install-button {
         font-size: 14px;
         padding: 10px;
+    }
+
+    .mobile-screenshot-slider {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 12px;
+        padding: 12px 0;
+        scroll-snap-type: x mandatory;
+    }
+
+    .mobile-slider-image {
+        flex: 0 0 auto;
+        width: 85%;
+        height: auto;
+        border-radius: 12px;
+        scroll-snap-align: start;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .active-screenshot-container {
+        display: none !important;
     }
 }

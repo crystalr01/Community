@@ -240,7 +240,7 @@ function CommunityDetails() {
                     </motion.div>
                     <div className="banner-text-wrapper">
                         <span className="banner-text-main">Unlock the full potential</span>
-                        <span className="banner-text-sub">Get the SmartGuruji App!</span>
+                        <span className="banner-text-sub">Get the teacher's favorite Expert Guruji App!</span>
                     </div>
                 </div>
                 <motion.a

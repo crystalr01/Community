@@ -558,7 +558,11 @@ body::before {
 /* Responsive Design */
 @media (max-width: 768px) {
     .page-container {
-        padding: 1rem;
+
+        padding-top: 4rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
     }
 
     .download-banner {

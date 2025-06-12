@@ -121,10 +121,10 @@ function DistrictCommunities() {
                                 <h3>{district}</h3>
                                 <p>Explore community discussions</p>
                                 <div className="card-footer">
-                                    <span>View Threads</span>
-                                    <svg viewBox="0 0 24 24">
+                                    <span class="view-threads">View Threads  <svg viewBox="0 0 24 24">
                                         <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                                    </svg>
+                                    </svg> </span>
+
                                 </div>
                             </div>
                         ))}
@@ -184,7 +184,8 @@ function DistrictCommunities() {
                                                 <svg viewBox="0 0 24 24">
                                                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                                                 </svg>
-                                                <span>{thread.senderUser}</span>
+                                                <span>{["8055514368", "8600876577"].includes(thread.senderUser) ? "Expert Guruji" : thread.senderUser}</span>
+
                                             </div>
                                             <div className="date-info">
                                                 <svg viewBox="0 0 24 24">

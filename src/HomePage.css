@@ -219,32 +219,43 @@
     overflow: hidden;
 }
 
-.thread-meta-row {
+.meta-row {
     display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
     flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    /* Align items vertically centered across row */
+    margin-bottom: 16px;
 }
 
-.meta-item {
+.meta-block {
     display: flex;
+    flex-direction: row;
+    /* Ensures icon + text are side by side */
     align-items: center;
+    /* Vertical alignment */
     gap: 6px;
-    font-size: 0.9rem;
-    color: #718096;
 }
 
 .meta-icon {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    color: #667eea;
+    display: flex;
+    align-items: center;
 }
 
-.community-icon {
+.user-icon {
     color: #667eea;
 }
 
-.community-name {
-    font-weight: 600;
-    color: #667eea;
+.tag-icon {
+    color: #718096;
+}
+
+.meta-text {
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 500;
 }
 
 .thread-stats-row {

@@ -11,6 +11,7 @@ function HomePage() {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
+
     useEffect(() => {
         const db = getDatabase();
         const communityRef = ref(db, 'CommunityChats/');
@@ -147,18 +148,20 @@ function HomePage() {
 
                                 <p className="thread-desc">{thread.desc}</p>
 
-                                <div className="thread-meta-row">
-                                    <div className="meta-item">
-                                        <FaUsers className="meta-icon community-icon" />
-                                        <span className="community-name">{thread.community}</span>
+                                <div className="meta-row">
+                                    <div className="meta-block">
+                                        <FaUsers className="meta-icon user-icon" />
+                                        <span className="meta-text">{thread.community}</span>
                                     </div>
+
                                     {!thread.imageUrl && (
-                                        <div className="meta-item">
-                                            <FaTag className="meta-icon" />
-                                            <span>{thread.category}</span>
+                                        <div className="meta-block">
+                                            <FaTag className="meta-icon tag-icon" />
+                                            <span className="meta-text">{thread.category}</span>
                                         </div>
                                     )}
                                 </div>
+
 
                                 <div className="thread-stats-row">
                                     <div className="stats-left">
@@ -180,7 +183,12 @@ function HomePage() {
                                 <div className="thread-footer">
                                     <div className="author-info">
                                         <FaUser className="author-icon" />
-                                        <span className="author-name">{thread.senderUser}</span>
+                                        <span className="author-name">
+                                            {['8055514368', '8600876577'].includes(thread.senderUser)
+                                                ? 'Expert Guruji'
+                                                : thread.senderUser}
+                                        </span>
+
                                     </div>
                                 </div>
                             </div>

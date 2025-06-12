@@ -10,7 +10,7 @@ import './CommunityDetails.css';
 
 // --- Enhanced Theme Configuration with Premium Colors ---
 const categoryThemes = {
-    News: {
+    'बातम्या': {
         bgGradient: 'linear-gradient(135deg, #0F0F23 0%, #1a1a2e 50%, #16213e 100%)',
         textColor: '#E8E9F3',
         accentColor: '#FFD700',
@@ -19,7 +19,7 @@ const categoryThemes = {
         shadowColor: 'rgba(79, 70, 229, 0.4)',
         glowColor: 'rgba(255, 215, 0, 0.3)',
     },
-    Speech: {
+    'भाषण': {
         bgGradient: 'linear-gradient(135deg, #0C2722 0%, #1a4037 50%, #2d5a4d 100%)',
         textColor: '#F0FDF4',
         accentColor: '#FF8C42',
@@ -28,7 +28,7 @@ const categoryThemes = {
         shadowColor: 'rgba(16, 185, 129, 0.4)',
         glowColor: 'rgba(255, 140, 66, 0.3)',
     },
-    Poem: {
+    'कविता': {
         bgGradient: 'linear-gradient(135deg, #4C1D95 0%, #7C2D92 50%, #BE185D 100%)',
         textColor: '#FAE8FF',
         accentColor: '#E879F9',
@@ -37,7 +37,7 @@ const categoryThemes = {
         shadowColor: 'rgba(236, 72, 153, 0.4)',
         glowColor: 'rgba(232, 121, 249, 0.3)',
     },
-    'Day Special': {
+    'दिन विशेष': {
         bgGradient: 'linear-gradient(135deg, #B45309 0%, #D97706 50%, #F59E0B 100%)',
         textColor: '#FFFBEB',
         accentColor: '#EF4444',
@@ -46,7 +46,7 @@ const categoryThemes = {
         shadowColor: 'rgba(250, 204, 21, 0.4)',
         glowColor: 'rgba(239, 68, 68, 0.3)',
     },
-    Stories: {
+    'कथा': {
         bgGradient: 'linear-gradient(135deg, #7F1D1D 0%, #991B1B 50%, #DC2626 100%)',
         textColor: '#FEE2E2',
         accentColor: '#C084FC',
@@ -55,7 +55,7 @@ const categoryThemes = {
         shadowColor: 'rgba(220, 38, 38, 0.4)',
         glowColor: 'rgba(192, 132, 252, 0.3)',
     },
-    Essay: {
+    'निबंध': {
         bgGradient: 'linear-gradient(135deg, #111827 0%, #1F2937 50%, #374151 100%)',
         textColor: '#F9FAFB',
         accentColor: '#60A5FA',
@@ -64,7 +64,7 @@ const categoryThemes = {
         shadowColor: 'rgba(107, 114, 128, 0.4)',
         glowColor: 'rgba(96, 165, 250, 0.3)',
     },
-    'Good Thoughts': {
+    'सुविचार': {
         bgGradient: 'linear-gradient(135deg, #0C4A6E 0%, #0369A1 50%, #0284C7 100%)',
         textColor: '#F0F9FF',
         accentColor: '#4ADE80',
@@ -75,18 +75,20 @@ const categoryThemes = {
     },
 };
 
+
 const categoryIcons = {
-    News: '📰',
-    Speech: '🎤',
-    Poem: '📜',
-    'Day Special': '🎉',
-    Stories: '📚',
-    Essay: '✍️',
-    'Good Thoughts': '💭',
+    'बातम्या': '📰',
+    'भाषण': '🎤',
+    'कविता': '📜',
+    'दिन विशेष': '🎉',
+    'कथा': '📚',
+    'निबंध': '✍️',
+    'सुविचार': '💭',
 };
 
+
 // Helper function to get theme colors
-const getTheme = (category, themes) => themes[category] || themes['News'];
+const getTheme = (category, themes) => themes[category] || themes['बातम्या'];
 
 // --- Main Component ---
 function CommunityDetails() {
@@ -357,7 +359,13 @@ function CommunityDetails() {
 
                     <div className="meta-items">
                         {[
-                            { label: 'Authored By', value: thread.senderUser || 'Community Expert', icon: '👤' },
+                            {
+                                label: 'Authored By',
+                                value: ['8055514368', '8600876577'].includes(thread.senderUser)
+                                    ? 'Expert Guruji'
+                                    : (thread.senderUser || 'Community Expert'),
+                                icon: '👤'
+                            },
                             { label: 'Published On', value: formatTimestamp(thread.timestamp), icon: '📅' },
                             { label: 'Engagements (Likes)', value: thread.likeCount || 0, icon: '❤️' },
                             { label: 'Total Views', value: thread.viewCount || 0, icon: '👁️' }
@@ -379,6 +387,7 @@ function CommunityDetails() {
                             </motion.div>
                         ))}
                     </div>
+
 
                     <motion.div
                         className="sidebar-decoration"
